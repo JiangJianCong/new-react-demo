@@ -1,7 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 
-class Record extends React.Component {
+export default class Record extends React.Component {
   render() {
     return (
       <tr>
@@ -13,4 +14,13 @@ class Record extends React.Component {
   }
 }
 
-export default Record;
+
+Record.PropTypes = {
+  id : PropTypes.number,
+  date : PropTypes.string,
+  title : PropTypes.string,
+  amount : PropTypes.number
+
+}
+
+
