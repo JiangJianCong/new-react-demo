@@ -1,6 +1,6 @@
 import React from 'react';
 import Record from './record';
-import axios from 'axios'
+import * as RecordsAPI from '../../utils/RecordApi'
 
 class Records extends React.Component {
 
@@ -15,7 +15,8 @@ class Records extends React.Component {
   }
 
   componentDidMount(){
-    axios.get('http://localhost:3004/records').then(
+
+    RecordsAPI.getAll().then(
       response => this.setState({
         records:response.data,
         isLoad:true
