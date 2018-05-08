@@ -45,6 +45,25 @@ class Records extends React.Component {
     })
   }
 
+  /**
+   * 更新后修改列表
+   */
+  updateRecord (record,data) {
+    const recordIndex = this.state.records.indexOf(record)
+    const newRecords = this.state.records.map((item,index)=> {
+      if (index != recordIndex) {
+        return item
+      }else {
+        return data
+      }
+    })
+
+    console.log(newRecords)
+    this.setState({
+      records : newRecords
+    });
+  }
+
   render() {
     const {error, isLoad, records} = this.state;
     let recordsComponent;
@@ -63,10 +82,11 @@ class Records extends React.Component {
               <th>Date</th>
               <th>Title</th>
               <th>Amount</th>
+              <th>Actions</th>
             </tr>
             </thead>
             <tbody>
-            {records.map((record) => <Record key={record.id} {...record} record={record}/>)}
+            {records.map((record) => <Record key={record.id} record={record} handleEditRecord={this.updateRecord.bind(this)}/>)}
 
             </tbody>
           </table>
