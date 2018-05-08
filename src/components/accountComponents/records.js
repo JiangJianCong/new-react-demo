@@ -1,6 +1,7 @@
 import React from 'react';
 import Record from './record';
 import * as RecordsAPI from '../../utils/RecordApi'
+import RecordForm from './RecordForm'
 
 class Records extends React.Component {
 
@@ -31,17 +32,31 @@ class Records extends React.Component {
     );
   }
 
+  /*新增记录*/
+  addRecord(record) {
+    this.setState({
+      error : null,
+      isLoad:true,
+      records:[
+        ...this.state.records,
+        record
+      ]
+
+    })
+  }
+
   render() {
     const {error, isLoad, records} = this.state;
+    let recordsComponent;
+
     if (error) {
-      return <div>Error : {error.message}</div>
+      recordsComponent=  <div>Error : {error.message}</div>
 
     }else if (!isLoad) {
-      return <div>Loading...</div>
+      recordsComponent = <div>Loading...</div>
     }else {
-      return (
-        <div>
-          <h2>Records</h2>
+      recordsComponent = (
+
           <table className="table table-bordered">
             <thead>
             <tr>
@@ -55,11 +70,17 @@ class Records extends React.Component {
 
             </tbody>
           </table>
-        </div>
       )
 
     }
 
+    return (
+      <div>
+        <h2>Records</h2>
+        <RecordForm handleNewRecord={this.addRecord.bind(this)}/>
+        {recordsComponent}
+      </div>
+    )
 
   }
 }

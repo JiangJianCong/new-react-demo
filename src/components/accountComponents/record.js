@@ -16,7 +16,7 @@ export default class Record extends React.Component {
 
 
 Record.PropTypes = {
-  id : PropTypes.number,
+  id : PropTypes.string,
   date : PropTypes.string,
   title : PropTypes.string,
   amount : PropTypes.number
