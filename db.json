@@ -2,39 +2,9 @@
   "records": [
     {
       "date": "2018-05-06",
-      "title": "title",
-      "amount": 1231,
-      "id": 1
-    },
-    {
-      "date": "2018-05-06",
-      "title": "title 2",
-      "amount": 11,
-      "id": 2
-    },
-    {
-      "date": "2018-05-06",
-      "title": "title 3",
-      "amount": 32211,
-      "id": 3
-    },
-    {
-      "date": "2018-05-06",
-      "title": "title 4",
-      "amount": 232,
-      "id": 4
-    },
-    {
-      "date": "2018-05-06",
       "title": "title 5",
       "amount": 7221,
       "id": 5
-    },
-    {
-      "date": "2018-05-09",
-      "title": "title6",
-      "amount": 1232,
-      "id": 6
     },
     {
       "date": "1",
